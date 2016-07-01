@@ -1,0 +1,13 @@
+interns <- c("sample", "name")
+graph<- subset(df, CanvassedBy %in% interns)
+
+
+graph2<- ggplot(graph, aes(SurveyQuestionLongName, fill=SurveyResponseName))+geom_bar()
+graph2+facet_grid(. ~ CanvassedBy )+
+  theme(
+    axis.text.x=element_text(angle=45, size=7),
+    axis.title.x=element_text(angle=10, color='red'),
+    axis.title.y=element_text(color='blue', face='bold', size=10),
+    axis.text=element_text(size=6),
+    strip.text.x = element_text(size = 8, colour = "Black", angle = 55))+
+  ggtitle("Leading up to Pride - Good Work")
